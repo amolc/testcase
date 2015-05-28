@@ -8,7 +8,7 @@
        	<ui style="list-style-type:circle">
 
         <li ng-repeat="q in data">
-          <input type="text"  placeholder="srno" value="{{q.srno}}" ng-model="q.srno" >
+          <input type="text"  align="right" placeholder="srno" value="{{q.srno}}" ng-model="q.srno"  align="center">
 
           <input type="text"  placeholder="first name" value= "{{q.fname}}" ng-model="q.fname" >
           <input type="text"  placeholder="last name" value= "{{q.lname}}" ng-model="q.lname" > 
@@ -18,7 +18,7 @@
           <button type="button" ng-click="update(q)" > Update </button>
           <button type="button" ng-click="delete(q)"> Delete </button> 
         </li>
-        
+
         </ui> 
       </div>
 </body>

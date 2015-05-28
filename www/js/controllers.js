@@ -1,17 +1,18 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $http , $state) {
-  
+  console.log('i am in dashctrl');
 	$scope.info=function(fa){
+    console.log(fa);
     if(fa){
       $http.post('http://localhost:3000/api/addUser', fa).success(function(res, req){
       console.log(res);
-        //$state.go('edit');  
+        $state.go('edit');  
       }).error(function(err){
         console.log(err);
       });
     }else {
-      //$state.go('edit');  
+      $state.go('edit');  
     }
       
   }
@@ -89,14 +90,12 @@ angular.module('starter.controllers', [])
         window.localStorage.setItem('username',res.record[0].username);
         window.localStorage.setItem('srno',res.record[0].srno);
          //$state.go('tab.dash');
-           // state.go('./#/dash');
-      $state.go('edit');
+        $state.go('tab.dash');
+      //$state.go('edit');
       //$state.go('./home');
       } else {
-        window.localStorage.setItem('login',true);
-        window.localStorage.setItem('username',res.record[0].username);
-        window.localStorage.setItem('srno',res.record[0].srno);
-        $state.go('/login');
+       console.log('invalid username'); 
+      //  $state.go('/login');
       }
       }).error(function(err){
         console.log(err);
