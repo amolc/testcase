@@ -1,0 +1,25 @@
+<html>
+<body>
+       <div ng-app="myApp" ><br><br><br>
+       	<h3 align="center">Welcome to Edit Page </h3>
+       
+        <button type="button" ng-click="logout(s)">Logout</button>
+       
+       	<ui style="list-style-type:circle">
+
+        <li ng-repeat="q in data">
+          <input type="text"  placeholder="srno" value="{{q.srno}}" ng-model="q.srno" >
+
+          <input type="text"  placeholder="first name" value= "{{q.fname}}" ng-model="q.fname" >
+          <input type="text"  placeholder="last name" value= "{{q.lname}}" ng-model="q.lname" > 
+          <input type="text"  placeholder="mobile number" value= "{{q.mob_no}}" ng-model="q.mob_no" >
+          <input type="text"  placeholder="Address" value= "{{q.address}}" ng-model="q.address" > 
+    
+          <button type="button" ng-click="update(q)" > Update </button>
+          <button type="button" ng-click="delete(q)"> Delete </button> 
+        </li>
+        
+        </ui> 
+      </div>
+</body>
+</html>
